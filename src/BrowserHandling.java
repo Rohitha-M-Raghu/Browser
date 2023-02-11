@@ -1,25 +1,12 @@
 import java.util.*;
 
 class Browser{
+	public String browserName = new String(); 
 	private  String[] history = new String[1];
 	private int historyIndex = 0;
 	
-	public Browser() {	//empty constructor
-	}
-	
-	public Browser(String[] urls) {	//constructor
-			for(int i=0; i<urls.length; ++i) {
-				try {
-				this.history[this.historyIndex] = urls[i];
-				}
-				catch(Exception e) {
-					this.growSize();
-					this.history[this.historyIndex] = urls[i];
-				}
-				this.historyIndex ++;
-			
-		}
-		
+	public Browser(String name) {	//creating new browser history
+		this.browserName = name;
 	}
 	
 	public void addBrowser(String url) { //to add new url to history
@@ -61,8 +48,8 @@ public class BrowserHandling {
 		char ch = 'y';
 		int choice;
 		String browserChoice = new String();
-		Browser chrome = new Browser();
-		Browser firefox = new Browser();
+		Browser chrome = new Browser("chrome");
+		Browser firefox = new Browser("firefox");
 		do {
 			System.out.println("CHOOSE:");
 			System.out.println("======================");
