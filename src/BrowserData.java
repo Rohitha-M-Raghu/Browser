@@ -6,7 +6,7 @@ import org.json.JSONArray;
 
 class BrowserClass {
 	private String browserName = "";
-	private JSONArray history = new JSONArray();
+	private JSONArray history = new JSONArray(); //history data
 	
 	public BrowserClass(String name) {	//creating new browser history
 		this.browserName = name;
