@@ -6,7 +6,8 @@ import org.json.JSONArray;
 
 class BrowserClass {
 	private String browserName = "";
-	private JSONArray history = new JSONArray(); //history data
+	
+	private JSONArray browserHistory = new JSONArray(); //history data
 	
 	
 	public BrowserClass(String name) {	//creating new browser history
@@ -14,17 +15,19 @@ class BrowserClass {
 	}
 	
 	public void addBrowserData(String url, String ip) {
-		this.history.put(url);
-		this.history.put(ip);
+		JSONArray history = new JSONArray(); 
+		history.put(url);
+		history.put(ip);
 		Timestamp accessTime = Timestamp.from(Instant.now());
-		this.history.put(accessTime);
+		history.put(accessTime);
+		this.browserHistory.put(history);
 	}
 
 	public String accessBrowserData() {
 		//for(int i=0;i<history.length(); ++i) {
 		//	history.optJSONArray(i);
 		//}
-		return this.history.toString();
+		return browserHistory.toString();
 	}
 	
 
@@ -67,8 +70,8 @@ public class BrowserData {
 				case 2: System.out.print("\nEnter the browser: ");
 						browserChoice = scanner.next();
 						if (browserChoice.equals("firefox")) {
-							String browserHistory = firefox.accessBrowserData();
-							System.out.println(browserHistory);
+							String browserData = firefox.accessBrowserData();
+							System.out.println(browserData);
 							//browserHistory = Arrays.copyOf(firefox.accessHistory(), 10);
 							//for(int i=0;i<firefox.accessHistorySize();++i) {
 							//	System.out.println("\n" + browserHistory[i]);
@@ -76,8 +79,8 @@ public class BrowserData {
 						
 						}
 						else {
-							String browserHistory = chrome.accessBrowserData();
-							System.out.println(browserHistory);
+							String browserData = chrome.accessBrowserData();
+							System.out.println(browserData);
 							//browserHistory = Arrays.copyOf(chrome.accessHistory(), 10);
 							//for(int i=0;i<chrome.accessHistorySize();++i) {
 							//	System.out.println("\n" + browserHistory[i]);
