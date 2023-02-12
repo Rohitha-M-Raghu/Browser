@@ -8,22 +8,23 @@ class BrowserClass {
 	private String browserName = "";
 	private JSONArray history = new JSONArray(); //history data
 	
+	
 	public BrowserClass(String name) {	//creating new browser history
 		this.browserName = name;
 	}
 	
 	public void addBrowserData(String url, String ip) {
-		history.put(url);
-		history.put(ip);
+		this.history.put(url);
+		this.history.put(ip);
 		Timestamp accessTime = Timestamp.from(Instant.now());
-		history.put(accessTime);
+		this.history.put(accessTime);
 	}
 
 	public String accessBrowserData() {
 		//for(int i=0;i<history.length(); ++i) {
 		//	history.optJSONArray(i);
 		//}
-		return history.toString();
+		return this.history.toString();
 	}
 	
 
