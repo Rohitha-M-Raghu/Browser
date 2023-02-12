@@ -24,17 +24,12 @@ class BrowserClass {
 	}
 
 	public String accessBrowserData() {
-		//for(int i=0;i<history.length(); ++i) {
-		//	history.optJSONArray(i);
-		//}
 		return this.browserHistory.toString();
 	}
 	
 
 	
 }
-
-
 
 public class BrowserData {
 
@@ -72,19 +67,11 @@ public class BrowserData {
 						if (browserChoice.equals("firefox")) {
 							String browserData = firefox.accessBrowserData();
 							System.out.println(browserData);
-							//browserHistory = Arrays.copyOf(firefox.accessHistory(), 10);
-							//for(int i=0;i<firefox.accessHistorySize();++i) {
-							//	System.out.println("\n" + browserHistory[i]);
-							//}
-						
+							
 						}
 						else {
 							String browserData = chrome.accessBrowserData();
 							System.out.println(browserData);
-							//browserHistory = Arrays.copyOf(chrome.accessHistory(), 10);
-							//for(int i=0;i<chrome.accessHistorySize();++i) {
-							//	System.out.println("\n" + browserHistory[i]);
-							//}
 						}
 						break;
 				default: System.out.println("Wrong Choice!!");
@@ -98,5 +85,8 @@ public class BrowserData {
 		scanner.close();
 		
 	}
-
+	
 }
+
+
+
