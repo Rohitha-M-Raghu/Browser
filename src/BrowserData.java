@@ -27,7 +27,7 @@ class BrowserClass {
 		//for(int i=0;i<history.length(); ++i) {
 		//	history.optJSONArray(i);
 		//}
-		return browserHistory.toString();
+		return this.browserHistory.toString();
 	}
 	
 
