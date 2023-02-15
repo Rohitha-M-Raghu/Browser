@@ -39,9 +39,9 @@ class BrowserClass {
 		System.out.println(browser + " added Successfully... ");
 	}
 
-	//public String accessBrowserData() {
-	//	return this.browserHistory.toString();
-	//}
+	public String accessBrowserData() {
+		return this.browserHistory.toString();
+	}
 	
 	public static void displayBrowsers() {
 		for(int i=0; i<BrowserClass.browserNumber; ++i) {
@@ -122,7 +122,8 @@ public class BrowserData {
 	}
 	
 	private static void browserHistoryData() { //case4: Browser History
-		int index = 0, flag = 0;
+		int index = 0;
+		int flag = 0;
 		System.out.println("Select a Browser: ");
 		BrowserClass.displayBrowsers();
 		String name = scanner.next();
@@ -140,6 +141,7 @@ public class BrowserData {
 		System.out.println("1. Add New History Entry");
 		System.out.println("2. Remove a History Entry");
 		System.out.println("3. Reset History");
+		System.out.println("4. Display History");
 		
 		System.out.print("Enter your Choice: ");
 		int historyChoice = scanner.nextInt();
@@ -148,11 +150,14 @@ public class BrowserData {
 					String url = scanner.next();
 					System.out.print("Enter the ip: ");
 					String ip = scanner.next();
+					Browser[index] = new BrowserClass();
 					Browser[index].addNewHistory(url, ip);
 					break;
 			case 2: Browser[index].removeHistory();
 					break;
 			case 3: Browser[index].resetHistory();
+					break;
+			case 4: System.out.println(Browser[index].accessBrowserData());
 					break;
 			default: System.out.println("Invalid Input");
 		}
